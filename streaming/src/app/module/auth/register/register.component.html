@@ -1,0 +1,10 @@
+<!-- Register -->
+<div class="auth-container">
+    <div class="auth-box">
+      <h2>Registro</h2>
+      <input type="text" placeholder="Usuario" [(ngModel)]="username">
+      <input type="password" placeholder="Contraseña" [(ngModel)]="password">
+      <button (click)="register()">Registrarse</button>
+      <a routerLink="/login">¿Ya tienes cuenta? Inicia Sesión</a>
+    </div>
+  </div>

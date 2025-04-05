@@ -1,0 +1,21 @@
+<div class="video-container">
+  <div class="video-player">
+    <h2 *ngIf="selectedVideoId">Reproduciendo Video ID: {{ selectedVideoId }}</h2>
+    <video *ngIf="selectedVideoUrl" class="videocont" controls width="640">
+      <source [src]="selectedVideoUrl" type="video/mp4" />
+    </video>
+    <p *ngIf="!selectedVideoUrl">Selecciona un video para reproducir</p><br>
+    <button *ngIf="selectedVideoId" (click)="deleteVideo(selectedVideoId)" class="btn delete-btn">
+      Eliminar Video
+    </button>
+  </div>
+
+  <div class="video-list">
+    <h3>Lista de Videos</h3>
+    <ul>
+      <li *ngFor="let video of videos" (click)="playVideo(video.id)" class="video-item">
+        {{ video.title }}
+      </li>
+    </ul>
+  </div>
+</div>
